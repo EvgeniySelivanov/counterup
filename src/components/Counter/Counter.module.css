@@ -1,0 +1,10 @@
+.counter{
+  border: 2px solid blueviolet;
+  border-radius: 10px;
+  background-color: bisque;
+  width:10%;
+  margin:10px auto;
+}
+button{
+  margin:10px;
+}
