@@ -23,12 +23,12 @@ class AutoClick extends Component {
 
   tickTimerAutoClick = () => {
     this.setState((state, props) => {
-      if (state.timeTimerAutoClick <= 30){ 
+      if (state.timeTimerAutoClick.getSeconds() < 30){ 
         return { timeTimerAutoClick: addSeconds(state.timeTimerAutoClick, 1) }; 
       }
-      else{
+    
         this.stop();
-      }
+      
     });
   };
 
