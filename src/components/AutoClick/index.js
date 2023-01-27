@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { format, addSeconds } from 'date-fns';
 import styles from './AutoClick.module.css';
-
 class AutoClick extends Component {
   constructor(props) {
     super(props);
@@ -23,12 +22,11 @@ class AutoClick extends Component {
 
   tickTimerAutoClick = () => {
     this.setState((state, props) => {
-      if (state.timeTimerAutoClick.getSeconds() < 30){ 
-        return { timeTimerAutoClick: addSeconds(state.timeTimerAutoClick, 1) }; 
+      if (state.timeTimerAutoClick.getSeconds() < props.timeRunAutoClick) {
+        return { timeTimerAutoClick: addSeconds(state.timeTimerAutoClick, 1) };
       }
-    
-        this.stop();
-      
+      this.stop();
+
     });
   };
 
@@ -60,7 +58,7 @@ class AutoClick extends Component {
   };
   reset = () => {
     this.stop();
-    this.setState({ time: new Date(0, 0, 0, 0, 0, 0, 0) ,timeTimerAutoClick: new Date(0, 0, 0, 0, 0, 0, 0)});
+    this.setState({ time: new Date(0, 0, 0, 0, 0, 0, 0), timeTimerAutoClick: new Date(0, 0, 0, 0, 0, 0, 0) });
   };
 
 
@@ -72,7 +70,6 @@ class AutoClick extends Component {
       <section className={styles.main}>
         <h1>It is AUTOCLICK value!!!!</h1>
         <h2>{format(time, 'HHmmss')}</h2>
-
         <h2>AutoClick run {format(timeTimerAutoClick, 'HH:mm:ss')}  time</h2>
         <button onClick={this.start}>start</button>
         <button onClick={this.stop}>stop</button>
