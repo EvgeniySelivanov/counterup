@@ -13,11 +13,11 @@ class CounterSection extends Component {
   }
   inputHandler = ({ target }) => {
     if (target.value >= MIN_STEP && target.value <=MAX_STEP)
-      this.setState({ step: target.value });
+      this.setState({ step: Number(target.value)});
   }
   inputHandlerIntevalAutoClik = ({ target }) => {
     if (target.value >= MIN_STEP && target.value <= MAX_STEP)
-      this.setState({ interval: target.value });
+      this.setState({ interval:Number(target.value)});
   }
   render() {
     const { step } = this.state;

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import styles from './Counter.module.css';
+import PropTypes from 'prop-types';
 class Counter extends Component {
   constructor(props) {
     super(props);
     this.state = { count: 0, isAdd: true };
-
   }
   clickHandler = () => {
     this.setState((state, props) => {
@@ -29,4 +29,10 @@ render() {
 }
 }
 
+Counter.propTypes={
+step:PropTypes.number.isRequired,
+};
+Counter.defaultProps={
+  step:1
+};
 export default Counter;

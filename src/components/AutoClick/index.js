@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { format, addSeconds } from 'date-fns';
+import PropTypes from 'prop-types';
 import styles from './AutoClick.module.css';
 class AutoClick extends Component {
   constructor(props) {
@@ -78,4 +79,14 @@ class AutoClick extends Component {
     )
   }
 }
+AutoClick.propTypes={
+  step:PropTypes.number.isRequired,
+  interval:PropTypes.number.isRequired,
+  timeRunAutoClick:PropTypes.number.isRequired
+  };
+  AutoClick.defaultProps={
+    step:1,
+    interval:1,
+    timeRunAutoClick:30
+  };
 export default AutoClick;
