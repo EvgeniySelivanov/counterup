@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AutoClick from '../AutoClick';
 import Counter from '../Counter';
-import styles from './CounterSection.module.css';
+import styles from './CounterSection.module.scss';
 import {MIN_STEP,MAX_STEP,timeRunAutoClick} from '../../constants';
 
 

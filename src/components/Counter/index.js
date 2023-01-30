@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './Counter.module.css';
+import styles from './Counter.module.scss';
 import PropTypes from 'prop-types';
 class Counter extends Component {
   constructor(props) {

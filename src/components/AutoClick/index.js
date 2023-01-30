@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { format, addSeconds } from 'date-fns';
 import PropTypes from 'prop-types';
-import styles from './AutoClick.module.css';
+import styles from './AutoClick.module.scss';
 class AutoClick extends Component {
   constructor(props) {
     super(props);
