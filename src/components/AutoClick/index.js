@@ -62,8 +62,12 @@ class AutoClick extends Component {
     this.setState({ time: new Date(0, 0, 0, 0, 0, 0, 0), timeTimerAutoClick: new Date(0, 0, 0, 0, 0, 0, 0) });
   };
 
-
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.interval === this.props.interval;
+  }
   render() {
+    console.log('render run');
+
     const { time } = this.state;
     const { timeTimerAutoClick } = this.state;
 

@@ -12,27 +12,30 @@ class Counter extends Component {
       return isAdd ? { count: state.count + Number(props.step) } : { count: state.count - Number(props.step) }
     });
   }
-changeHandler = () => {
-  this.setState({ isAdd: !this.state.isAdd })
-}
-render() {
-  const { count, isAdd } = this.state;
-  const contentBtn = isAdd ? 'Add' : 'Sub';
+  changeHandler = () => {
+    this.setState({ isAdd: !this.state.isAdd })
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.step === this.props.step;
+  }
+  render() {
+    const { count, isAdd } = this.state;
+    const contentBtn = isAdd ? 'Add' : 'Sub';
 
-  return (
-    <section>
-      <p className={styles.counter}>result: {count}</p>
-      <button onClick={this.clickHandler}>{contentBtn}</button>
-      <button onClick={this.changeHandler}>Change mode</button>
-    </section>
-  );
-}
+    return (
+      <section>
+        <p className={styles.counter}>result: {count}</p>
+        <button onClick={this.clickHandler}>{contentBtn}</button>
+        <button onClick={this.changeHandler}>Change mode</button>
+      </section>
+    );
+  }
 }
 
-Counter.propTypes={
-step:PropTypes.number.isRequired,
+Counter.propTypes = {
+  step: PropTypes.number.isRequired,
 };
-Counter.defaultProps={
-  step:1
+Counter.defaultProps = {
+  step: 1
 };
 export default Counter;
